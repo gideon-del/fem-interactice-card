@@ -1,0 +1,218 @@
+:root {
+  --clr-red: hsl(0, 100%, 66%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-grayish-voilet: hsl(270, 3%, 87%);
+  --clr-dark-grayish-voilet: hsl(279, 6%, 55%);
+  --clr-very-dark-voilet: hsl(278, 68%, 11%);
+  --fs-default: 18px;
+}
+
+@font-face {
+  font-family: "Space Grotesk-7";
+  src: url(../Space_Grotesk/static/SpaceGrotesk-Bold.ttf);
+}
+@font-face {
+  font-family: "Space Grotesk-5";
+  src: url(../Space_Grotesk/static/SpaceGrotesk-Light.ttf);
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 100%;
+}
+
+.gradient {
+  background-image: url(../images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3rem;
+  font-family: "Space Grotesk-5";
+}
+
+.front-card,
+.back-card {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 40vw;
+  height: 20rem;
+}
+
+.back-card {
+  background-image: url(../images/bg-card-back.png);
+  margin-right: -13rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5rem;
+}
+
+.front-card {
+  margin-right: -10rem;
+  background-image: url(../images/bg-card-front.png);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.front-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.circles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.circle-white {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--clr-white);
+}
+
+.circle-black {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: solid 1px var(--clr-white);
+}
+
+.card-num {
+  color: var(--clr-white);
+  font-size: 2.9rem;
+}
+
+.card-info {
+  color: var(--clr-white);
+  font-size: var(--fs-default);
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.cv {
+  color: var(--clr-white);
+  letter-spacing: 3px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk-7";
+}
+
+.container {
+  width: 50%;
+}
+
+.form {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.form__name, .form__number {
+  display: flex;
+  flex-direction: column;
+  color: var(--clr-very-dark-voilet);
+  gap: 0.5rem;
+}
+.form__name--input, .form__name--input, .form__number--input, .form__number--input {
+  padding: 0.5rem 10px;
+  border: 1px solid var(--clr-dark-grayish-voilet);
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+.form__name--input::placeholder, .form__name--input::placeholder, .form__number--input::placeholder, .form__number--input::placeholder {
+  color: var(--clr-dark-grayish-voilet);
+  opacity: 0.5;
+}
+.form__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.form__exp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form__exp--inputs {
+  display: flex;
+  gap: 1rem;
+}
+.form__exp--inputs input {
+  width: 50%;
+  padding: 0.5rem 10px;
+  border: 1px solid var(--clr-dark-grayish-voilet);
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+.form__exp--inputs input::placeholder {
+  color: var(--clr-dark-grayish-voilet);
+  opacity: 0.5;
+}
+
+.cvc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cvc input {
+  width: 100%;
+  padding: 0.5rem 10px;
+  border: 1px solid var(--clr-dark-grayish-voilet);
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+.cvc input::placeholder {
+  color: var(--clr-dark-grayish-voilet);
+  opacity: 0.5;
+}
+
+.btn {
+  background-color: var(--clr-very-dark-voilet);
+  color: var(--clr-white);
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: "Space Grotesk-5";
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
