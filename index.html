@@ -77,43 +77,40 @@
             >
           </div>
           <div class="form__info">
-            <div class="form__exp">
-              <label for="exp">Exp. Date (MM/YY)</label>
-              <div class="form__exp--inputs">
-                <input
-                  type="number"
-                  name="exp"
-                  id="exp"
-                  class="month"
-                  placeholder="MM"
-                  min="01"
-                  max="12"
-                />
-                <input
-                  type="number"
-                  name="exp"
-                  id="exp"
-                  class="year"
-                  placeholder=" YY"
-                  min="01"
-                  max="30"
-                  maxlength="2"
-                />
-              </div>
-              <span class="error date-error hidden">Can't be blank</span>
-            </div>
-            <div class="cvc">
-              <label for="cvc"> CVC</label>
+            <label for="exp">Exp. Date <spaan>(MM/YY)</spaan></label>
+            <label for="cvc"> CVC</label>
+            <div class="form__exp--inputs">
               <input
                 type="number"
-                name="cvc"
-                id="cvc"
-                placeholder="e.g. 123"
-                min="100"
-                max="999"
+                name="exp"
+                id="exp"
+                class="month"
+                placeholder="MM"
+                min="01"
+                max="12"
               />
-              <span class="error cvc-error hidden">Can't be blank</span>
+              <input
+                type="number"
+                name="exp"
+                id="exp"
+                class="year"
+                placeholder=" YY"
+                min="01"
+                max="30"
+                maxlength="2"
+              />
             </div>
+
+            <input
+              type="number"
+              name="cvc"
+              id="cvc"
+              placeholder="e.g. 123"
+              min="100"
+              max="999"
+            />
+            <span class="error date-error hidden">Can't be blank</span>
+            <span class="error cvc-error hidden">Can't be blank</span>
           </div>
           <button type="submit" class="btn">Confirm</button>
         </form>

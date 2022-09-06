@@ -157,7 +157,7 @@ body {
 .form__info {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1rem 2rem;
 }
 .form__exp {
   display: flex;
@@ -183,25 +183,22 @@ body {
   opacity: 0.5;
 }
 
-.cvc {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.cvc .month,
-.cvc .year,
-.cvc #cvc {
+#cvc {
   width: 100%;
   padding: 0.5rem 10px;
   border: 1px solid var(--clr-dark-grayish-voilet);
   border-radius: 10px;
   font-size: 1.5rem;
 }
-.cvc .month::placeholder,
-.cvc .year::placeholder,
-.cvc #cvc::placeholder {
+#cvc::placeholder {
   color: var(--clr-dark-grayish-voilet);
   opacity: 0.5;
+}
+
+.cvc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .btn {
@@ -263,6 +260,126 @@ input[type=number] {
 }
 .success .btn {
   width: 100%;
+}
+
+label[for=cvc] {
+  align-self: end;
+}
+
+label[for=exp] {
+  display: flex;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 1024px) {
+  .front-card,
+.back-card {
+    height: 15rem;
+  }
+  .back-card {
+    padding-right: 3rem;
+  }
+  .success__parag {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 921px) {
+  .front-card,
+.back-card {
+    height: 13rem;
+  }
+  .front-card {
+    margin-right: -7vw;
+  }
+  .back-card {
+    margin-right: -9vw;
+  }
+  .container {
+    width: 78%;
+  }
+  .card-info {
+    font-size: 13px;
+  }
+  .success__header {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  body {
+    grid-template-columns: none;
+    grid-template-rows: 2.5fr 6fr;
+  }
+  .gradient {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+  .front-card,
+.back-card {
+    margin-right: 0;
+  }
+  .front-card {
+    position: absolute;
+    top: 17vh;
+    left: 22vw;
+  }
+  .form-container {
+    margin-left: 0;
+  }
+  .container {
+    width: 50%;
+  }
+  .form {
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  input {
+    padding: 0.3rem 10px;
+    font-size: 1rem;
+  }
+  .gradient {
+    padding-block: 1rem;
+    padding-right: 0.5rem;
+  }
+  .front-card,
+.back-card {
+    width: 88vw;
+    height: 12rem;
+  }
+  .front-card {
+    left: 8vw;
+    top: 8rem;
+  }
+  .card-num {
+    font-size: 6vw;
+  }
+  .gradient {
+    justify-content: flex-end;
+  }
+  .container {
+    width: 90%;
+    margin-top: 2rem;
+    margin-inline: 0;
+  }
+  label {
+    font-size: 12px;
+  }
+  label[for=exp] {
+    display: flex;
+    white-space: nowrap;
+  }
+  .form__info {
+    gap: 0.5rem;
+  }
+  .btn {
+    font-size: 16px;
+  }
+  .success {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

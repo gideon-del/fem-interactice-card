@@ -1,16 +1,22 @@
 "use strict";
+//Input Eleent
 const inputName = document.querySelector("#name");
 const inputNumber = document.querySelector("#number");
 const inputMonth = document.querySelector(".month");
 const inputYear = document.querySelector(".year");
 const inputCvc = document.querySelector("#cvc");
+
+//Error Element
 const numberError = document.querySelector(".number-error");
-const form = document.querySelector("form");
-const inputs = document.querySelectorAll("input");
-const btnSubmit = document.querySelector(".btn");
-const cardNum = document.querySelector(".card-num");
 const dateError = document.querySelector(".date-error");
 const cvcError = document.querySelector(".cvc-error");
+
+//Form and all inputs
+const form = document.querySelector("form");
+const inputs = document.querySelectorAll("input");
+
+//Card Ellements
+const cardNum = document.querySelector(".card-num");
 const date = document.querySelector("#card-date");
 const cvcEl = document.querySelector(".cv");
 const errorEl = document.querySelectorAll(".error");

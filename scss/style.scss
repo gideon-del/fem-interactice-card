@@ -13,6 +13,28 @@
   font-family: "Space Grotesk";
   src: url(../Space_Grotesk/static/SpaceGrotesk-Bold.ttf);
 }
+@mixin respond($breakpoint) {
+  @if ($breakpoint==tab-land) {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if ($breakpoint==tab-port) {
+    @media only screen and (max-width: 921px) {
+      @content;
+    }
+  }
+  @if ($breakpoint==tab-port-small) {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if ($breakpoint==phone) {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+}
 
 //Reset
 body {
@@ -147,7 +169,7 @@ body {
   &__info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem 2rem;
   }
   &__exp {
     display: flex;
@@ -173,24 +195,21 @@ body {
     }
   }
 }
-
+#cvc {
+  width: 100%;
+  padding: 0.5rem 10px;
+  border: 1px solid var(--clr-dark-grayish-voilet);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  &::placeholder {
+    color: var(--clr-dark-grayish-voilet);
+    opacity: 0.5;
+  }
+}
 .cvc {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  .month,
-  .year,
-  #cvc {
-    width: 100%;
-    padding: 0.5rem 10px;
-    border: 1px solid var(--clr-dark-grayish-voilet);
-    border-radius: 10px;
-    font-size: 1.5rem;
-    &::placeholder {
-      color: var(--clr-dark-grayish-voilet);
-      opacity: 0.5;
-    }
-  }
 }
 .btn {
   background-color: var(--clr-very-dark-voilet);
@@ -246,5 +265,127 @@ input[type="number"] {
   }
   .btn {
     width: 100%;
+  }
+}
+label[for="cvc"] {
+  align-self: end;
+}
+label[for="exp"] {
+  display: flex;
+  white-space: nowrap;
+}
+@include respond(tab-land) {
+  .front-card,
+  .back-card {
+    height: 15rem;
+  }
+  .back-card {
+    padding-right: 3rem;
+  }
+  .success {
+    &__parag {
+      text-align: center;
+    }
+  }
+}
+@include respond(tab-port) {
+  .front-card,
+  .back-card {
+    height: 13rem;
+  }
+  .front-card {
+    margin-right: -7vw;
+  }
+  .back-card {
+    margin-right: -9vw;
+  }
+  .container {
+    width: 78%;
+  }
+  .card-info {
+    font-size: 13px;
+  }
+  .success {
+    &__header {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+}
+@include respond(tab-port-small) {
+  body {
+    grid-template-columns: none;
+    grid-template-rows: 2.5fr 6fr;
+  }
+  .gradient {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+  .front-card,
+  .back-card {
+    margin-right: 0;
+  }
+  .front-card {
+    position: absolute;
+    top: 17vh;
+    left: 22vw;
+  }
+  .form-container {
+    margin-left: 0;
+  }
+  .container {
+    width: 50%;
+  }
+  .form {
+    gap: 10px;
+  }
+}
+
+@include respond(phone) {
+  input {
+    padding: 0.3rem 10px;
+    font-size: 1rem;
+  }
+  .gradient {
+    padding-block: 1rem;
+    padding-right: 0.5rem;
+  }
+  .front-card,
+  .back-card {
+    width: 88vw;
+    height: 12rem;
+  }
+  .front-card {
+    left: 8vw;
+    top: 8rem;
+  }
+  .card-num {
+    font-size: 6vw;
+  }
+  .gradient {
+    justify-content: flex-end;
+  }
+  .container {
+    width: 90%;
+    margin-top: 2rem;
+    margin-inline: 0;
+  }
+  label {
+    font-size: 12px;
+    &[for="exp"] {
+      display: flex;
+      white-space: nowrap;
+    }
+  }
+  .form__info {
+    gap: 0.5rem;
+  }
+  .btn {
+    font-size: 16px;
+  }
+  .success {
+    width: 90%;
   }
 }
