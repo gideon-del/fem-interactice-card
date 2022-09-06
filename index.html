@@ -12,6 +12,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="app.js"></script>
     <title>Frontend Mentor | Interactive card details form</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -29,14 +30,15 @@
     <div class="gradient">
       <div class="front-card">
         <div class="circles">
-          <div class="circle-white"></div>
-          <div class="circle-black"></div>
+          <img src="./images/card-logo.svg" alt="" />
         </div>
         <div class="front-card__text">
           <p class="card-num">0000 0000 0000 0000</p>
           <div class="card-info">
-            <div class="card-name"><span>Jane Appleseed </span></div>
-            <div class="card-date"><span> 00/00 </span></div>
+            <div class="card-name">
+              <span id="card-name">Jane Appleseed </span>
+            </div>
+            <div class="card-date"><span id="card-date"> 00/00 </span></div>
           </div>
         </div>
       </div>
@@ -57,33 +59,72 @@
               id="name"
               class="form__name--input"
               placeholder="e.g. Jane Appleseed"
+              required
             />
           </div>
           <div class="form__number">
             <label for="number"> Card Number</label>
             <input
-              type="number"
+              type="text"
               name="number"
               id="number"
               class="form__number--input"
               placeholder="e.g. 1234 5678 9123 0000"
+              maxlength="16"
             />
+            <span class="error number-error hidden"
+              >Wrong format, numbers only</span
+            >
           </div>
           <div class="form__info">
             <div class="form__exp">
               <label for="exp">Exp. Date (MM/YY)</label>
               <div class="form__exp--inputs">
-                <input type="number" name="exp" id="exp" placeholder="MM" />
-                <input type="number" name="exp" id="exp" placeholder=" YY" />
+                <input
+                  type="number"
+                  name="exp"
+                  id="exp"
+                  class="month"
+                  placeholder="MM"
+                  min="01"
+                  max="12"
+                />
+                <input
+                  type="number"
+                  name="exp"
+                  id="exp"
+                  class="year"
+                  placeholder=" YY"
+                  min="01"
+                  max="30"
+                  maxlength="2"
+                />
               </div>
+              <span class="error date-error hidden">Can't be blank</span>
             </div>
             <div class="cvc">
               <label for="cvc"> CVC</label>
-              <input type="number" name="cvc" id="cvc" placeholder="e.g. 123" />
+              <input
+                type="number"
+                name="cvc"
+                id="cvc"
+                placeholder="e.g. 123"
+                min="100"
+                max="999"
+              />
+              <span class="error cvc-error hidden">Can't be blank</span>
             </div>
           </div>
           <button type="submit" class="btn">Confirm</button>
         </form>
+      </div>
+      <div class="success hide-container">
+        <div class="success__logo">
+          <img src="./images/icon-complete.svg" alt="success" />
+        </div>
+        <h1 class="success__header">Thank you!</h1>
+        <p class="success__parag">We've added your card details</p>
+        <button class="btn">Continue</button>
       </div>
     </div>
     <!-- 
@@ -109,7 +150,7 @@
 
 
 
-  Thank you! We've added your card details Continue -->
+    -->
     <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"

@@ -8,17 +8,14 @@
 }
 
 @font-face {
-  font-family: "Space Grotesk-7";
+  font-family: "Space Grotesk";
   src: url(../Space_Grotesk/static/SpaceGrotesk-Bold.ttf);
-}
-@font-face {
-  font-family: "Space Grotesk-5";
-  src: url(../Space_Grotesk/static/SpaceGrotesk-Light.ttf);
 }
 body {
   width: 100vw;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  font-family: "Space Grotesk";
 }
 
 *,
@@ -39,6 +36,11 @@ img {
   width: 100%;
 }
 
+input:focus {
+  outline: none;
+  padding: 0.5rem 10px;
+}
+
 body {
   display: grid;
   grid-template-columns: 35% 65%;
@@ -54,7 +56,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   gap: 3rem;
-  font-family: "Space Grotesk-5";
+  font-family: "Space Grotesk";
 }
 
 .front-card,
@@ -67,7 +69,7 @@ body {
 
 .back-card {
   background-image: url(../images/bg-card-back.png);
-  margin-right: -13rem;
+  margin-right: -15vw;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -75,12 +77,13 @@ body {
 }
 
 .front-card {
-  margin-right: -10rem;
+  margin-right: -10vw;
   background-image: url(../images/bg-card-front.png);
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: min(39vw, 39rem);
 }
 .front-card__text {
   display: flex;
@@ -92,25 +95,12 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.circle-white {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  background-color: var(--clr-white);
-}
-
-.circle-black {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: solid 1px var(--clr-white);
+  width: 20%;
 }
 
 .card-num {
   color: var(--clr-white);
-  font-size: 2.9rem;
+  font-size: 2.9vw;
 }
 
 .card-info {
@@ -132,11 +122,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Space Grotesk-7";
+  margin-left: 6vw;
 }
 
 .container {
   width: 50%;
+  margin-inline: 1rem;
 }
 
 .form {
@@ -173,6 +164,9 @@ body {
   flex-direction: column;
   gap: 0.5rem;
 }
+.form__exp label {
+  white-space: nowrap;
+}
 .form__exp--inputs {
   display: flex;
   gap: 1rem;
@@ -194,14 +188,18 @@ body {
   flex-direction: column;
   gap: 0.5rem;
 }
-.cvc input {
+.cvc .month,
+.cvc .year,
+.cvc #cvc {
   width: 100%;
   padding: 0.5rem 10px;
   border: 1px solid var(--clr-dark-grayish-voilet);
   border-radius: 10px;
   font-size: 1.5rem;
 }
-.cvc input::placeholder {
+.cvc .month::placeholder,
+.cvc .year::placeholder,
+.cvc #cvc::placeholder {
   color: var(--clr-dark-grayish-voilet);
   opacity: 0.5;
 }
@@ -211,8 +209,60 @@ body {
   color: var(--clr-white);
   padding: 1rem;
   border-radius: 10px;
-  font-family: "Space Grotesk-5";
+  font-family: "Space Grotesk";
   font-size: 1.5rem;
+}
+
+.error {
+  color: var(--clr-red);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.red {
+  border: var(--clr-red) 1px solid !important;
+}
+
+.hidden {
+  height: 0;
+  overflow: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.hide-container {
+  display: none !important;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 2rem;
+  align-items: center;
+}
+.success__logo {
+  width: 30%;
+}
+.success__header {
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: var(--clr-very-dark-voilet);
+}
+.success__parag {
+  font-size: 1.4rem;
+  color: var(--clr-dark-grayish-voilet);
+}
+.success .btn {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
